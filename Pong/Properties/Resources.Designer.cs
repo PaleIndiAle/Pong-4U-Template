@@ -77,5 +77,13 @@ namespace Pong.Properties {
                 return ResourceManager.GetStream("score", resourceCulture);
             }
         }
+
+        internal static System.IO.UnmanagedMemoryStream paddle
+        {
+            get
+            {
+                return ResourceManager.GetStream("paddle", resourceCulture);
+            }
+        }
     }
 }

@@ -33,6 +33,7 @@ namespace Pong
         // Sounds for game
         SoundPlayer scoreSound = new SoundPlayer(Properties.Resources.score);
         SoundPlayer collisionSound = new SoundPlayer(Properties.Resources.collision);
+        SoundPlayer paddleHitSound = new SoundPlayer(Properties.Resources.paddle);
 
         // check to see if a new game can be started
         Boolean newGameOk = true;
@@ -229,16 +230,16 @@ namespace Pong
             // --- use ballMoveRight boolean to change direction
             if (player1.IntersectsWith(ball))
             {
-                collisionSound.Play();
+                paddleHitSound.Play();
                 ballMoveRight = true;
-                BALL_SPEED = BALL_SPEED + 1;
+                BALL_SPEED = BALL_SPEED + 2;
                 PLAYER_SPEED = PLAYER_SPEED + 1;
             }
             else if (player2.IntersectsWith(ball))
             {
-                collisionSound.Play();
+                paddleHitSound.Play();
                 ballMoveRight = false;
-                BALL_SPEED = BALL_SPEED + 1;
+                BALL_SPEED = BALL_SPEED + 2;
                 PLAYER_SPEED = PLAYER_SPEED + 1;
             }
 
@@ -262,6 +263,7 @@ namespace Pong
                 else
                 {
                     BALL_SPEED = 4;
+                    PLAYER_SPEED = 5;
                     ball.X = this.Width / 2 - 20;
                     ball.Y = this.Height / 2 - 20;
                     ballMoveRight = true;
@@ -286,6 +288,7 @@ namespace Pong
                 else
                 {
                     BALL_SPEED = 4;
+                    PLAYER_SPEED = 5;
                     ball.X = this.Width / 2 - 20;
                     ball.Y = this.Height / 2 - 20;
                     ballMoveRight = false;
@@ -312,7 +315,7 @@ namespace Pong
             // --- show a message on the startLabel to indicate a winner, (may need to Refresh).
             // --- use the startLabel to ask the user if they want to play again
             gameUpdateLoop.Stop();
-            startLabel.Text = $"{winner} Won! Press Space to play again.";
+            startLabel.Text = $"{winner} Won! \n Press Space to play again.";
             startLabel.Visible = true;
         }
 

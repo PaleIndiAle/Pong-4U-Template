@@ -91,7 +91,7 @@
     <None Include="Resources\collision.wav" />
     <None Include="Resources\score.wav" />
     <None Include="Resources\wall bounce.wav" />
-    <None Include="Resources\paddle hit.wav" />
+    <None Include="Resources\paddle.wav" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="WMPLib">
