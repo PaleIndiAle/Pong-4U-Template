@@ -312,7 +312,7 @@ namespace Pong
             // --- show a message on the startLabel to indicate a winner, (may need to Refresh).
             // --- use the startLabel to ask the user if they want to play again
             gameUpdateLoop.Stop();
-            startLabel.Text = $"{winner} Won! Press Space to play again.";
+            startLabel.Text = $"{winner} Won! \n Press Space to play again.";
             startLabel.Visible = true;
         }
 
